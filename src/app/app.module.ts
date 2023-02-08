@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DxPopoverModule } from 'devextreme-angular';
 import { SortablejsModule } from 'ngx-sortablejs';
+import devextremeAjax from 'devextreme/core/utils/ajax';
+import { sendRequestFactory } from './dx-http-client-helper';
 
 
 @NgModule({
@@ -27,7 +29,11 @@ import { SortablejsModule } from 'ngx-sortablejs';
     AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(httpClient: HttpClient) {
+  	devextremeAjax.inject({ sendRequest: sendRequestFactory(httpClient) });
+  }
+}
 
 
 /*
