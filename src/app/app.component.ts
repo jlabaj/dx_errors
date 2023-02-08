@@ -1,15 +1,50 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { Employee, Priority, Service, Task } from "./app.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: "app-root",
+	templateUrl: "./app.component.html",
+	styleUrls: ["./app.component.scss"],
 })
-export class AppComponent { }
+export class AppComponent {
+	tasks: Task[];
 
+	employees: Employee[];
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+	priorities: Priority[];
+
+	statuses: string[];
+
+	constructor(service: Service) {
+		this.tasks = service.getTasks();
+		this.employees = service.getEmployees();
+		this.priorities = service.getPriorities();
+
+		this.statuses = [
+			"Not Started",
+			"Need Assistance",
+			"In Progress",
+			"Deferred",
+			"Completed",
+		];
+
+		this.onReorder = this.onReorder.bind(this);
+	}
+
+	onReorder(e) {
+		const visibleRows = e.component.getVisibleRows();
+		const toIndex = this.tasks.findIndex(
+			(item) => item.Task_ID === visibleRows[e.toIndex].data.Task_ID
+		);
+		const fromIndex = this.tasks.findIndex(
+			(item) => item.Task_ID === e.itemData.Task_ID
+		);
+
+		this.tasks.splice(fromIndex, 1);
+		this.tasks.splice(toIndex, 0, e.itemData);
+	}
+
+	getCompletionText(cellInfo) {
+		return `${cellInfo.valueText}%`;
+	}
+}
