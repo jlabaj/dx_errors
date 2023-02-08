@@ -18,7 +18,12 @@
     "skipLibCheck": true,
     "importHelpers": true,
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2020", "dom", "ES2021.String"]
+    "lib": ["es2020", "dom", "ES2021.String"],
+    "paths": {
+			"jszip": [
+			"node_modules/jszip/dist/jszip.min.js"
+			]
+		}
   },
   "angularCompilerOptions": {
     "enableIvy": true

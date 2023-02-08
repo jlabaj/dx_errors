@@ -59,6 +59,7 @@ import {
   DxTreeViewModule,
   DxValidatorModule,
 } from 'devextreme-angular';
+import { Service } from './app.service';
 
 @NgModule({
   imports: [
@@ -122,6 +123,7 @@ import {
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
+  providers:[Service]
 })
 export class AppModule {
   constructor(httpClient: HttpClient) {
