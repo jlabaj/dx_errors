@@ -9,6 +9,7 @@ import { SortablejsModule } from 'ngx-sortablejs';
 import devextremeAjax from 'devextreme/core/utils/ajax';
 import { sendRequestFactory } from './dx-http-client-helper';
 import {
+  DevExtremeModule,
   DxButtonGroupModule,
   DxButtonModule,
   DxCalendarModule,
@@ -49,6 +50,7 @@ import {
   DxTabPanelModule,
   DxTabsModule,
   DxTagBoxModule,
+  DxTemplateHost,
   DxTextAreaModule,
   DxTextBoxModule,
   DxTileViewModule,
