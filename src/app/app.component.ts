@@ -41,6 +41,25 @@ export class AppComponent {
     this.onDragStart = this.onDragStart.bind(this);
   }
 
+  onFocusedRowChanged(e): void {
+    const rowData = e.row && e.row.data;
+
+    if (rowData) {
+      this.setFocusedRow(e.row.rowIndex);
+      this.detectChanges();
+    }
+    // if (!this.rowClicked && e.row?.node && e.row?.data && !e.row.data.isNewItem) {
+    // 	this.selectedChecklistNode = null;
+    // 	this.selectedChecklistItem = null;
+    // 	this.setFocusedRow(null);
+    // 	this.selectedChecklistNode = e.row.node;
+    // 	this.selectedChecklistItem = this.getRealItem(e.row.data);
+
+    // }
+
+    // this.rowClicked = false;
+  }
+
   onRowClicked(e): void {
     if (e.node.data.isNewItem) {
       this.detectChanges();

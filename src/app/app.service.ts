@@ -2034,7 +2034,7 @@ const tasks: Task[] = [
 const employees: Employee[] = [
   {
     ID: 1,
-    Name: 'John HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn HeartJohn Heart',
+    Name: 'John Heart',
     Picture:
       'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/01.png',
   },
@@ -2070,7 +2070,7 @@ const employees: Employee[] = [
   },
   {
     ID: 7,
-    Name: 'Sandra Johnson Sandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra JohnsonSandra Johnson',
+    Name: 'Sandra Johnson',
     Picture:
       'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/08.png',
   },
