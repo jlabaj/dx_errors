@@ -24,10 +24,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
             "assets": ["src/assets", "src"],
-            "styles": [
-              "node_modules/devextreme/dist/css/dx.common.css",
-              "src/styles.css"
-            ],
+            "styles": ["node_modules/devextreme/dist/css/dx.common.css"],
             "scripts": ["node_modules/jquery/dist/jquery.slim.js"],
             "optimization": false,
             "outputHashing": "none",

@@ -1,4 +1,9 @@
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ViewChild,
+} from '@angular/core';
 import { Employee, Priority, Service, Task } from './app.service';
 import Guid from 'devextreme/core/guid';
 import { DxTreeListComponent } from 'devextreme-angular';
@@ -9,6 +14,7 @@ import { delay } from 'rxjs';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   @ViewChild('treelist') public treeList: DxTreeListComponent;
@@ -92,6 +98,7 @@ export class AppComponent {
     // this.rowClicked = false;
     await this.onKeyDownClicked(e.event);
   }
+
   private onKeyDownClicked(event: KeyboardEvent): void {
     this.detectChanges();
   }
@@ -125,16 +132,21 @@ export class AppComponent {
     this.tasks.splice(fromIndex, 1);
     this.tasks.splice(toIndex, 0, e.itemData);
 
-    this.setFocusedRow(null);
+    // this.setFocusedRow(null);
 
-    await delay(2000);
+    // // await delay(2000);
 
-    this.treeList.instance.refresh().then(() => {
-      this.treeList.instance.navigateToRow(toIndex).then(() => {
-        this.setFocusedRow(toIndex);
-        this.detectChanges();
-      });
-    });
+    // this.treeList.instance.refresh();
+    // this.detectChanges();
+    // this.treeList.instance.updateDimensions();
+
+    this.treeList.instance.refresh();
+    // .then(() => {
+    //   this.treeList.instance.navigateToRow(toIndex).then(() => {
+    //     this.setFocusedRow(toIndex);
+    //     this.detectChanges();
+    //   });
+    // });
   }
 
   setFocusedRow(id: number): void {
