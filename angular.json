@@ -23,6 +23,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
+            "assets": ["src/assets", "src"],
             "styles": [
               "node_modules/devextreme/dist/css/dx.common.css",
               "src/styles.css"
@@ -107,7 +108,7 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": ["src/styles.css"],
             "scripts": [],
-            "assets": ["src/assets"]
+            "assets": ["src/assets", "src"]
           }
         },
         "e2e": {
