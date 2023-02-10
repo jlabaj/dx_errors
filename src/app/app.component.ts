@@ -47,24 +47,7 @@ export class AppComponent {
     this.onDragStart = this.onDragStart.bind(this);
   }
 
-  onFocusedRowChanged(e): void {
-    const rowData = e.row && e.row.data;
-
-    if (rowData) {
-      this.setFocusedRow(e.row.rowIndex);
-      this.detectChanges();
-    }
-    // if (!this.rowClicked && e.row?.node && e.row?.data && !e.row.data.isNewItem) {
-    // 	this.selectedChecklistNode = null;
-    // 	this.selectedChecklistItem = null;
-    // 	this.setFocusedRow(null);
-    // 	this.selectedChecklistNode = e.row.node;
-    // 	this.selectedChecklistItem = this.getRealItem(e.row.data);
-
-    // }
-
-    // this.rowClicked = false;
-  }
+  onFocusedRowChanged(e): void {}
 
   onRowClicked(e): void {
     if (e.node.data.isNewItem) {
@@ -141,6 +124,7 @@ export class AppComponent {
     // this.treeList.instance.updateDimensions();
 
     this.treeList.instance.refresh();
+    this.detectChanges(); //adding this is fixing the jumping issue
     // .then(() => {
     //   this.treeList.instance.navigateToRow(toIndex).then(() => {
     //     this.setFocusedRow(toIndex);
